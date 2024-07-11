@@ -39,11 +39,13 @@ while i > 0:
             date = date.split("-")
             date = f"{date[1]}/{date[2]}/{date[0]}"
             print(date)
+            worksheet.update_acell(f"B{row}",date)
        
         if "ended" in data_list[i]:
-            valiation = data_list[i].get("ended")
+            end = data_list[i].get("ended")
+            worksheet.update_acell(f"B{row}",end)
             
-            print(valiation)
+            print(end)
         row = row + 1
         i = i - 1
     else: 
